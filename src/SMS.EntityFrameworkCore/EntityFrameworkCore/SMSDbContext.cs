@@ -90,6 +90,8 @@ public class SMSDbContext :
                 SMSConsts.DbSchema);
             b.ConfigureByConvention(); //auto configure for the base class props
             b.Property(x => x.FName).IsRequired().HasMaxLength(68);
+            b.Property(x => x.Email).IsRequired().HasMaxLength(256);
+            b.HasIndex(x => x.Email).IsUnique();
         });
     }
 }

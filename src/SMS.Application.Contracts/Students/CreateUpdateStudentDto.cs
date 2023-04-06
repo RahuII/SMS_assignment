@@ -8,9 +8,11 @@ namespace SMS.Students
     public class CreateUpdateStudentDto
     {
         [Required]
+        [RegularExpression(@"^[a-zA-Z]+$", ErrorMessage = "Use letters only please")]
         public string FName { get; set; }
 
         [Required]
+        [RegularExpression(@"^[a-zA-Z]+$", ErrorMessage = "Use letters only please")]
         public string LName { get; set; }
 
         [Required]
@@ -18,6 +20,7 @@ namespace SMS.Students
         public string Email { get; set; }
 
         [Required]
+        [RegularExpression(@"^[0-9]{10}$", ErrorMessage = "Phone number contians only integers value")]
         public string Phone { get; set; }
 
         [Required]
